@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todolist app</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="linktop-btn">
+          <a href="/">ToDoList app</a>
+      </div>
+    </header>
+    <div class="index-wrapper">
+      <div class="container">
+        <div class="complete-list">
+          <h2 class="complete-list-title">➡︎Complete list</h2>
+          <span class="counter"><span class="fas fa-check"></span> Completed <%= completes.length %></span>
+          <ul>
+            <% completes.forEach((complete) => { %>
+              <li>
+                <span><i class="fas fa-medal"></i>　<%= complete.name %></span>
+                <form class="delete-btn" action="/complete-list-delete/<%= complete.id %>" method="post">
+                  <input type="submit" value="delete">
+                </form>
+              </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer>
+
+    </footer>
+  </body>
+</html>
